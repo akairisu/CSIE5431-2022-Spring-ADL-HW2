@@ -1,3 +1,7 @@
-wget https://www.dropbox.com/scl/fo/h7doa9ry0wgpz4yrb0di2/h?dl=1 -O model.zip
-unzip model.zip -d model
-rm -f model.zip
+mkdir model
+wget https://www.dropbox.com/sh/ifrwrdga46fdngz/AADmpK3wEdi9b7qVElsnwkkUa?dl=1 -O model/context.zip
+unzip model/context.zip -d model/context
+rm -f model/context.zip
+wget https://www.dropbox.com/sh/mge5k3yz06n6trx/AADlSMM9Fp9e_L0v2OSZqUGpa?dl=1 -O model/qa.zip
+unzip model/qa.zip -d model/qa
+rm -f model/qa.zip
