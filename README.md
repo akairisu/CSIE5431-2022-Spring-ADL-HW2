@@ -33,23 +33,23 @@ multiple choice:
 ```
 QA:
 ```
-!python3 run_swag.py --model_name_or_path hfl/chinese-roberta-wwm-ext-large \
+!python3 run_qa.py --model_name_or_path hfl/chinese-roberta-wwm-ext-large \
+--context_file context.json \
+--train_file train_qa.json \
+--validation_file valid_qa.json \
 --do_train \
 --do_eval \
---context_file /path/to/context.json \
---train_file /path/to/train.json \
---validation_file /path/to/valid.json \
---cache_dir /cache \
 --learning_rate 3e-5 \
 --num_train_epochs 2 \
 --max_seq_length 384 \
---output_dir model/qa/ \
+--doc_stride 128 \
+--output_dir model/ \
 --per_gpu_eval_batch_size=1 \
 --per_device_train_batch_size=1 \
---gradient_accumulation_steps 2 \
---overwrite_output \
+--gradient_accumulation_steps=2 \
+--overwrite_output_dir \
 --load_best_model_at_end True \
---metric_for_best_model eval_accuracy \
+--metric_for_best_model eval_exact_match \
 --evaluation_strategy steps \
---save_total_limit 5
+--save_total_limit 1
 ```
